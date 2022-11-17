@@ -27,13 +27,18 @@ var nuovoVerso = "muu";
 animaliFattoria.push(nuovoAnimale);
 versiAnimali.push(nuovoVerso);
 
-/////////////////////////////////
+//vogliamo cambiare il valore in una determinata posizione
+//la gallina è al terzo posto -> indice 2
+animaliFattoria[2] = "topo"; //riassegno il valore nell'indice 2 dell'Array
+versiAnimali[2] = "squit";
+
+///////////////Metodi per ordinare e invertire//////////////////
 // animaliFattoria.sort();
 // versiAnimali.sort();
 //
 // animaliFattoria.reverse();
 // versiAnimali.reverse();
-/////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
 // document.write(animaliFattoria[0] + " fa " + versiAnimali[0] + "<br>" );
 // document.write(animaliFattoria[1] + " fa " + versiAnimali[1] + "<br>" );
@@ -52,9 +57,12 @@ for(var indice in animaliFattoria){
 
 
 
+
+
 //fare degli array misti è una cafonata per quanto fattibile
 var arrayMisto = ['Dario', "Mennillo", 33, true];
 console.log(arrayMisto);
+
 
 
 
