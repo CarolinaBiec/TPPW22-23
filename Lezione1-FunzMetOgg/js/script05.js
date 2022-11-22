@@ -18,13 +18,24 @@ function stampaElenco(){
 }
 
 function inserisciLibro(){
-    var nuovoLibro = prompt("Che libro vuoi inserire ?");
+    
+    //pulire il campo <p id="feed"></p>
+    document.getElementById('feed').innerHTML = "";
+    
+    //con .value prendo il contenuto del campo INPUT
+    var nuovoLibro = document.getElementById("inputNuovoLibro").value; 
+    
     if(libri.indexOf(nuovoLibro) == -1){
         libri.push(nuovoLibro);
         stampaElenco();
+        //pulisco il campo input
+        document.getElementById('inputNuovoLibro').value = "";
+
     }else{
-        console.log("Hai già questo libro sullo scaffale"); 
-        // questo avviso andrà scritto sotto l'elenco. Crea un tag <p id="feed"></p>. Questo avviso sparisce con l'aggiunta di un nuovo libro
+ 
+        var feed = document.getElementById('feed');
+        document.getElementById('inputNuovoLibro').value = "";
+        feed.innerHTML = "Hai già questo libro sullo scaffale";
     }
 }
 
@@ -33,20 +44,19 @@ stampaElenco();
 
 
 
-function calcola(){
-    var somma = 2+6;
-    somma = 5+4;
 
-    
+// function calcola(){
+//     var somma = 2+6;
+//     somma = 5+4;
 
-    return "Il risultato uscente è " + (somma/2)  ;
-}
+//     return "Il risultato uscente è " + (somma/2)  ;
+// }
 
-//per intercettare il risultato della funziona calcola()
-var numero = calcola();
-console.log(numero);
+// //per intercettare il risultato della funziona calcola()
+// var numero = calcola();
+// console.log(numero);
 
-console.log(calcola());
-elencoLibri.innerHTML += calcola();
+// console.log(calcola());
+// elencoLibri.innerHTML += calcola();
 
 
