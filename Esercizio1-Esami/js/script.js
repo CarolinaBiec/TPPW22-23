@@ -18,3 +18,6 @@ for(var i = 0; i < voti.length; i++){
 var resoconto = document.getElementById('resoconto');
 resoconto.innerHTML+= "<p>Numero esami superati: " + superati + "</p>";
 resoconto.innerHTML+= "<p>Numero esami NON superati: " + nonSuperati + "</p>";
+
+//step successivo:
+//aggiungi un pulsante "stampa reoconto ultimo esame", al click sul pulsante verrà stampata la lista e il resoconto di quanti lo hhanno superato e quanti no. Praticamente, all'avvio della pagina deve essere vuota e deve esserci solo il pulsante
