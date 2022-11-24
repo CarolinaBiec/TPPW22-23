@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gioca al gioco</h1>
+
+    <p>Per poter superare il livello il giocatore deve avere il punteggio maggiore di 20 e le skill maggiore di 15</p>
+
+    <script>
+
+        var punteggio = 21;
+        var skill = 7;
+
+        if(punteggio > 20 && skill > 15){
+            console.log("Bravo, hai superato il livello");
+        }else if(punteggio <= 20 && skill > 15){
+            console.log("Mi dispiace, il tuo punteggio è sotto la soglia e valgono " + punteggio);
+        }else if(punteggio > 20 && skill <= 15){
+            console.log("Mi dispiace, le tue skill sono sotto la soglia e valgono " + skill);
+        }else{
+            console.log("Non hai superato il livello perché entrambi i punteggi sono sotto soglia");
+        }
+
+
+    </script>
+</body>
+</html>
