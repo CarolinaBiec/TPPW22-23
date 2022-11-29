@@ -107,6 +107,7 @@ document.getElementById("matricolaNew").value = classe.length + 1; //setto in au
 function registraStudente(){
     //controllare che i campi siano pieni prima di inserire qualcosa altrimenti stampa un avviso
     //opz: controllare che venga inserita una matricola non esistente
+    //https://stackoverflow.com/questions/12462318/find-a-value-in-an-array-of-objects-in-javascript
 
     var nome = document.getElementById('nome').value;
     var cognome = document.getElementById('cognome').value;
