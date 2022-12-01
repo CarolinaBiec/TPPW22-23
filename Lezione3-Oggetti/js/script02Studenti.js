@@ -109,10 +109,10 @@ function registraStudente(){
     //opz: controllare che venga inserita una matricola non esistente
     //https://stackoverflow.com/questions/12462318/find-a-value-in-an-array-of-objects-in-javascript
 
+    
     var nome = document.getElementById('nome').value;
     var cognome = document.getElementById('cognome').value;
     var eta = document.getElementById('eta').value;
-
     var matricolaNew = document.getElementById('matricolaNew').value; //prendo il valore della matricola
     
     var nuovoStudente = new Studente(nome, cognome, eta, matricolaNew);
@@ -124,3 +124,14 @@ function registraStudente(){
 }
 
 btnInsert.onclick = registraStudente;
+
+
+function checkMatricola(matricola, array){
+    for (let i=0; i < array.length; i++) {
+        if (array[i].matricola === matricola) {
+            return array[i];
+        }
+    }
+}
+
+console.log( checkMatricola(2, classe) );

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Compila il form per registrarti</h1>
+
+    <!--  -->
+    <form method="GET" action="#" id="mioForm">
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <br>
+        <label for="cognome">Cognome: </label>
+        <input type="text" id="cognome" name="cognome">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <label for="tel">Telefono:</label>
+        <input type="tel" id="tel" name="tel">
+        <br>
+        <label for="dataNascita">Data di Nascita: </label>
+        <input type="date" id="dataNascita" name="dataNascita">
+        <br>
+        <input type="checkbox" id="term&Cond"> Accetta termini e condizioni
+        <br>
+
+        <label for="nazione">Nazionalità</label>
+        <select name="nazione" id="nazione">
+            <option value="ITA">Italiana</option>
+            <option value="USA">Americana</option>
+            <option value="UK">Britannica</option>
+            <option value="CAN">Canadese</option>
+            <option value="FR">Francese</option>
+        </select>
+
+        <br>
+        
+        <fieldset>
+            <legend>Seleziona il genere</legend>
+            <input type="radio" name="genere" id="genM">
+            <label for="genere">Maschio</label>
+            <br>
+            <input type="radio" name="genere" id="genF">
+            <label for="genere">Femmina</label>
+            <br>
+            <input type="radio" name="genere" id="genA">
+            <label for="genere">Altro</label>
+            <br>
+        </fieldset>
+
+        <input type="submit" value="Registrati">
+    </form> 
+
+    
+</body>
+</html>

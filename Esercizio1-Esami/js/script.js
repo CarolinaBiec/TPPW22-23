@@ -1,12 +1,20 @@
-var listaVoti = document.getElementById('listaVoti')
+var btn = document.getElementById('btn');
+btn.onclick = mostraResoconto;
 
-var voti =[15,18,29,13,27,30,28,25,22,14,19,18,26,25];
+var listaVoti = document.getElementById('listaVoti');
+var resoconto = document.getElementById('resoconto');
 
-var nonSuperati = 0;
-var superati = 0;
-
-for(var i = 0; i < voti.length; i++){
-    if(voti[i] < 18){
+function mostraResoconto() {
+    listaVoti.innerHTML = "";
+    resoconto.innerHTML = "";
+    
+    var voti =[15,18,29,13,27,30,28,25,22,14,19,18,26,25];
+    
+    var nonSuperati = 0;
+    var superati = 0;
+    
+    for(var i = 0; i < voti.length; i++){
+        if(voti[i] < 18){
         listaVoti.innerHTML += "<li>" + voti[i] + " esame NON superato </li>";
         nonSuperati++;
     }
@@ -15,9 +23,6 @@ for(var i = 0; i < voti.length; i++){
         superati++
     }
 }
-var resoconto = document.getElementById('resoconto');
 resoconto.innerHTML+= "<p>Numero esami superati: " + superati + "</p>";
 resoconto.innerHTML+= "<p>Numero esami NON superati: " + nonSuperati + "</p>";
-
-//step successivo:
-//aggiungi un pulsante "stampa reoconto ultimo esame", al click sul pulsante verrà stampata la lista e il resoconto di quanti lo hhanno superato e quanti no. Praticamente, all'avvio della pagina deve essere vuota e deve esserci solo il pulsante
+}
