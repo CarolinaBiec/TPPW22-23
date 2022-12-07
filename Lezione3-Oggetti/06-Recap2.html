@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Presentazione automobile</h1>
+
+    <p id="marcaModello"></p>
+    <p id="colore"></p>
+    <p id="numPorte"></p>
+    <p id="alimentazione"></p>
+
+    <button id="btnDet">Mostra Dettagli</button>
+    <button id="btn">Prova Auto</button>
+
+
+
+    <div id="demo"></div>
+
+    <script>
+        
+        //notazione costruttore - crea il prototipo del mio oggetto
+        //per convenzione i costruttori hanno tutti la maiusc
+        function Automobile(marca, modello, colore, alimentazione, targa, numPorte, cilindrata, prezzo){
+            this.marca = marca;
+            this.modello = modello;
+            this.colore = colore;
+            this.alimentazione = alimentazione;
+            this.numPorte = numPorte;
+            this.targa = targa;
+            this.cilindrata = cilindrata;
+            this.prezzo = prezzo;
+
+            this.provaAuto = function(){
+                console.log("SHHHHHH");
+            };
+
+            //con il toString creo una rappresentazione formato stringa di tutta l'automobile
+            this.toString = function(){
+                var presentazione = "AUTO: " + this.marca +  " " + this.modello + "- Alimentazione: " + this.alimentazione + " - numero porte: " + this.numPorte + " Colore: " + this.colore + " - Cilindrata " + this.cilindrata + " - Prezzo: " + this.prezzo + " - Targa " + this.targa;
+
+                return presentazione;
+            }
+        }
+
+        //voglio costruire una nuova auto, richiamerò il costruttore con la keyword new
+        
+        //sto istanziondo un nuovo oggetto di tipo Automobile
+        var auto1 = new Automobile("Ford", "Puma", "rosso", "elettrica", "AB123FD", 5, 1500, 20000);
+
+        console.log(auto1.toString());
+
+        var marcaModello = document.getElementById("marcaModello");
+        var colore = document.getElementById('colore');
+        var numPorte = document.getElementById('numPorte');
+        var alimentazione = document.getElementById('alimentazione');
+
+        marcaModello.innerHTML = "Marca: " + auto1.marca + " " + auto1.modello;
+        colore.innerHTML = "Colore: " + auto1.colore;
+        numPorte.innerHTML = "Num Porte: " + auto1.numPorte;
+        alimentazione.innerHTML = "Alimentazione: " + auto1.alimentazione;
+
+        var btn = document.getElementById('btn');
+        var btnDet = document.getElementById('btnDet');
+
+
+        //gli eventi NON hanno bisogno delle parentesi tonde. 
+        //ALTERNATIVA: wrappare tutto con una funzione anonima
+        // btn.onclick = auto1.provaAuto;
+
+        btn.onclick = function(){
+            auto1.provaAuto();
+        }
+
+        btnDet.onclick = function(){
+            demo.innerHTML = auto1.toString();
+        }
+
+
+
+        //OFF topic su funzioni anonime
+        // function saluta(qualcuno){
+        //     console.log("Ciao " + qualcuno);
+        // }
+
+        // btn.onclick = function(){
+        //     console.log("Sto salutando una persona: ")
+        //     saluta("Pasqualino");
+        // }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Veicoli Disponibili</h2>
+    <ul id="listaAuto"></ul>
+
+    <script>
+         function Automobile(marca, modello, colore, alimentazione, targa, numPorte, cilindrata, prezzo){
+            this.marca = marca;
+            this.modello = modello;
+            this.colore = colore;
+            this.alimentazione = alimentazione;
+            this.numPorte = numPorte;
+            this.targa = targa;
+            this.cilindrata = cilindrata;
+            this.prezzo = prezzo;
+
+            this.provaAuto = function(){
+                console.log("SHHHHHH");
+            };
+
+            //con il toString creo una rappresentazione formato stringa di tutta l'automobile
+            this.toString = function(){
+                var presentazione = "AUTO: " + this.marca +  " " + this.modello + "- Alimentazione: " + this.alimentazione + " - numero porte: " + this.numPorte + " Colore: " + this.colore + " - Cilindrata " + this.cilindrata + " - Prezzo: " + this.prezzo + " - Targa " + this.targa;
+
+                return presentazione;
+            }
+        }
+
+        var parcoAutomobili = [
+            new Automobile("Ford", "Fiesta", "blu", "ibrida", "AB123MN", 4, 1200, 10000),
+            new Automobile("Fiat", "Tipo", "rosso", "benzina", "RE123WW", 5, 1500, 13000),
+            new Automobile("Opel", "Mokka", "grigio", "diesel", "AS34F4", 3, 1000, 14000),
+            new Automobile("Mazda", "3", "nero", "benzina", "WE456VV", 4, 1500, 20000),
+            new Automobile("Audi", "Q3", "nero opaco", "diesel", "ZA543RT", 5, 1800, 25000),
+        ]
+
+
+        var listaAuto = document.getElementById('listaAuto');
+        
+        for(var i = 0; i < parcoAutomobili.length; i++){
+            listaAuto.innerHTML += "<li>" + parcoAutomobili[i].toString() + "</li>";
+        }
+
+    </script>    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Presentazione automobile</h1>
+
+    <p id="marcaModello"></p>
+    <p id="colore"></p>
+    <p id="numPorte"></p>
+    <p id="alimentazione"></p>
+
+    <button id="btn">Accendi/Spegni</button>
+
+    <div id="demo"></div>
+
+    <script>
+        // Notazione Letterale
+        var automobile = {
+            //proprietà
+            marca: "Ford",
+            modello: "Puma",
+            targa:"GZ456SE",
+            colore: "Rosso",
+            numPorte: 5,
+            alimentazione: "elettrica",
+            livelloCarburante : 100,
+            accesa: false,
+
+            accendi: function(){
+                this.accesa = true;
+                this.livelloCarburante += -2;
+            },
+
+            spegni: function(){
+                this.accesa = false;
+            },
+
+            //da fare: 
+            
+            toString: function(){
+                var presentazione = "Auto: " + this.marca +  " " + this.modello + " Colore: " + this.colore + " Alimentazione: " + this.alimentazione;
+                return presentazione;
+            }
+        }
+
+        //come richiamare proprietà o eseguire metodi
+        //oggetto.nomeProp
+        //oggetto.nomeMetodo()
+      
+        console.log(automobile.marca);
+
+        //prendo i tag da riempire
+        var marcaModello = document.getElementById('marcaModello'); //<p id="marcaModello"></p>
+        marcaModello.innerHTML = "Marca: " + automobile.marca + " " + automobile.modello;
+
+        var colore = document.getElementById('colore');
+        var alimentazione = document.getElementById('alimentazione');
+        var numPorte = document.getElementById('numPorte');
+
+        colore.innerHTML = "Colore: " + automobile.colore + " metallizzato";
+        alimentazione.innerHTML = "Alimentazione: " + automobile.alimentazione + " plug-in";
+        numPorte.innerHTML = "Numero porte: " + automobile.numPorte;
+
+
+        var demo = document.getElementById('demo');
+        var btn = document.getElementById('btn');
+
+        //funzione legata al pulsante
+        function accendiAuto(){
+
+            if(automobile.accesa == false){
+                automobile.accendi();    
+            }else{
+                automobile.spegni();
+            }
+
+            if(automobile.livelloCarburante >= 70){
+                demo.style = "color: green";
+            }else if(automobile.livelloCarburante < 70 && automobile.livelloCarburante >= 40){
+                demo.style = "color: orange";
+            }else{
+                demo.style = "color: red";
+            }
+
+            
+            demo.innerHTML = "L'automobile è accesa ? " + automobile.accesa;
+            demo.innerHTML += "<br>Livello carica " + automobile.livelloCarburante;
+        
+        }
+
+        btn.onclick = accendiAuto;
+    </script>
+</body>
+</html>
