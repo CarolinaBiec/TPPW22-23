@@ -5,14 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     
     <h2>Veicoli Disponibili</h2>
     <ul id="listaAuto"></ul>
 
+    <img id="miaImg" class="dimImg" src="" alt="">
+
+
     <script>
-         function Automobile(marca, modello, colore, alimentazione, targa, numPorte, cilindrata, prezzo){
+         function Automobile(marca, modello, colore, alimentazione, targa, numPorte, cilindrata, prezzo, imgURL){
             this.marca = marca;
             this.modello = modello;
             this.colore = colore;
@@ -21,6 +26,7 @@
             this.targa = targa;
             this.cilindrata = cilindrata;
             this.prezzo = prezzo;
+            this.imgURL = imgURL;
 
             this.provaAuto = function(){
                 console.log("SHHHHHH");
@@ -28,19 +34,30 @@
 
             //con il toString creo una rappresentazione formato stringa di tutta l'automobile
             this.toString = function(){
-                var presentazione = "AUTO: " + this.marca +  " " + this.modello + "- Alimentazione: " + this.alimentazione + " - numero porte: " + this.numPorte + " Colore: " + this.colore + " - Cilindrata " + this.cilindrata + " - Prezzo: " + this.prezzo + " - Targa " + this.targa;
-
+                var presentazione = "AUTO: " + this.marca +  " " + this.modello + "- Alimentazione: " + this.alimentazione + " - numero porte: " + this.numPorte + " Colore: " + this.colore + " - Cilindrata " + this.cilindrata + " - Prezzo: " + this.prezzo + " - Targa " + this.targa + 
+                "<button onclick=inserisciImg('"+this.imgURL+"')>Foto</button>";
                 return presentazione;
             }
         }
 
+        var miaImg = document.getElementById('miaImg');
+
+        function inserisciImg(url){
+            console.log(url);
+            miaImg.src = url;
+        }
+
         var parcoAutomobili = [
-            new Automobile("Ford", "Fiesta", "blu", "ibrida", "AB123MN", 4, 1200, 10000),
-            new Automobile("Fiat", "Tipo", "rosso", "benzina", "RE123WW", 5, 1500, 13000),
-            new Automobile("Opel", "Mokka", "grigio", "diesel", "AS34F4", 3, 1000, 14000),
-            new Automobile("Mazda", "3", "nero", "benzina", "WE456VV", 4, 1500, 20000),
-            new Automobile("Audi", "Q3", "nero opaco", "diesel", "ZA543RT", 5, 1800, 25000),
-        ]
+            new Automobile("Ford", "Fiesta", "blu", "ibrida", "AB123MN", 4, 1200, 10000, "https://www.gpas-cache.ford.com/guid/07094525-459f-30d5-9e1a-227086f0defb.png"),
+
+            new Automobile("Fiat", "Tipo", "rosso", "benzina", "RE123WW", 5, 1500, 13000, "https://www.motori.it/1530BuCGCoBrOfL7LvGgO2RtKiE=/720x495/smart/uploads/2019/01/190117_Fiat_Tipo_Sport_01.jpg"),
+
+            new Automobile("Opel", "Mokka", "grigio", "diesel", "AS34F4", 3, 1000, 14000, "https://cdn.drivek.it/configurator-imgs/cars/it/800/OPEL/ASTRA-HYBRID/41051_HATCHBACK-5-DOORS/opel-astra-2021-front-side-1.jpg"),
+
+            new Automobile("Mazda", "3", "nero", "benzina", "WE456VV", 4, 1500, 20000, "https://media-assets.mazda.eu/image/upload/q_auto,f_auto/mazdait/globalassets/offers/clearcuts/mmi_cx60_kr9reat_51k_7-8.png?rnd=4a526d"),
+
+            new Automobile("Audi", "Q3", "nero opaco", "diesel", "ZA543RT", 5, 1800, 25000, "https://cdn.corrieredellosport.it/images/2021/02/18/175048022-9493654e-0363-4d51-9f7e-e7f9fddc75b0.jpg"),
+        ];
 
 
         var listaAuto = document.getElementById('listaAuto');

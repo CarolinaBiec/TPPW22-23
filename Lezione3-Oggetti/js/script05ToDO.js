@@ -1,12 +1,29 @@
 var btn = document.getElementById('btn');
 
-function prendiData(){
-    var data = document.getElementById('data').value;
-    var dataSeparata = data.split('-');
-    console.log(dataSeparata);
+// function prendiData(){
+//     var data = document.getElementById('data').value;
+//     var dataSeparata = data.split('-');
+//     console.log(dataSeparata);
+// }
+function SingoloTODO(descrizione, data){
+    this.descrizione = descrizione;
+    this.data = data;
 }
 
-btn.onclick = prendiData;
+function prendiTODO(){
+    var data = document.getElementById('data').value;
+    var todo = document.getElementById('todo').value;
+
+    var mioTODO = new SingoloTODO(todo, data);
+
+    var todoCostruito = mioTODO.descrizione + " - " + mioTODO.data;
+    
+}
+
+btn.onclick = prendiTODO;
+
+
+
 
 //componi una todolist nel seguente modo
 //descrizione - data
