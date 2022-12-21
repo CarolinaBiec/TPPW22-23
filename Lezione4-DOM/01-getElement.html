@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>lista della spesa</h1>
+    <ul id="lista">
+        <li class="item" id="uno">Pasta</li>
+        <li class="item" id="due">Pane</li>
+        <li class="item" >Frutta</li>
+        <li class="item" >Verdura</li>
+    </ul>
+
+    <ul id="listaLibri">
+        <li>Il conte di Montecristo</li>
+        <li>Cime Tempestose</li>
+        <li>Guida galattica per autostoppisti</li>
+        <li>L'idiota</li>
+    </ul>
+
+    <script>
+        //recupero la lista
+        // var lista = document.getElementById('lista');
+        // console.log(lista);
+
+        //QUERY SELECTOR funziona attraverso sintassi css
+        var lista = document.querySelector('#lista')
+        console.log(lista);
+
+        //voglio modificare il contenuto del primo li
+        let primoLi = document.querySelector('#uno');
+        primoLi.innerHTML = "Spaghetti";
+
+        //voglio modificare il contenuto del secondo elemento senza utilizzare l'id
+        let secondoLi = document.querySelector('li.item'); //il querySelector, nel momento in cui gli passo una sintassi valida per più elementi, mi restituirà la prima occorrenza
+        secondoLi.innerHTML = "Rosetta"; //in questo caso cambia comunque il primo
+
+        let secondoLiVero = document.querySelector('#due');
+        secondoLiVero.innerHTML = "Baguette";
+
+        //voglio recuperare tutta la lista
+        let miaLista = document.querySelector('ul'); //posso anche passare un tag, avendone due prende comunque la prima lista 
+        console.log(miaLista);
+
+
+        //RECUPERARE PIù ELEMENTI CONTEMPORANEAMENTE    
+        //recupero tutti gli li 
+        //il QUERYSELECTORALL genera una NodeList, cioè un oggetto simile agli array
+
+        let liAll = document.querySelectorAll('li');
+        console.log(liAll);
+        let primoElLi = liAll[0]; //tratto liAll come un array
+        console.log(primoElLi);
+
+        for(var i = 0; i < liAll.length; i++){
+            console.log(liAll[i].textContent);
+        }
+
+
+        //voglio recupare solo gli elementi della prima lista e aggiungere la classe txtRed
+        var items = document.querySelectorAll('li.item');
+        
+        for(var i = 0; i < items.length; i++){
+            items[i].classList.add("txtRed");
+        }
+
+        //voglio recuperare gli elementi della seconda lista e aggiungere la classe txtBlue
+        var items2 = document.querySelectorAll('#listaLibri li');
+        for(var i = 0; i < items2.length; i++){
+            items2[i].classList.add("txtBlue");
+        }
+
+        items2[3].classList.remove("txtBlue");
+        items2[2].classList.replace("txtBlue", "txtRed")
+
+
+
+    </script>
+</body>
+</html>

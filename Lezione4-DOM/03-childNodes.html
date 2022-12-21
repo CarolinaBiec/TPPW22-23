@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <ul id="listaFilm">
+        <li class="txtRed">Il buono il brutto e il cattivo<button>Segna Film</button></li>
+        <li class="txtRed">Batman</li>
+        <li class="txtRed">Qualcuno voloò sul nido del cuculo</li>
+        <li class="txtRed">Shining</li>
+        <li class="txtRed" id="FullMJ">Full Metal Jacket</li>
+        <li class="txtRed">Arancia Meccanica</li>
+    </ul>
+
+    <script>
+
+        let parentUl = document.querySelector('#listaFilm'); //ul
+        console.log(parentUl);
+
+        let primoFiglio = parentUl.firstElementChild;
+        console.log(primoFiglio);
+
+        // let testoDelPrimoFiglio = primoFiglio.firstChild.textContent;
+        let testoDelPrimoFiglio = primoFiglio.textContent;
+        console.log(testoDelPrimoFiglio);
+
+        let primoFilm = document.querySelector('#listaFilm').firstElementChild.firstChild.textContent;
+        console.log(primoFilm);
+
+        //prendo l'ultimo film
+        let ultimoFilm = document.querySelector('#listaFilm').lastElementChild.textContent;
+        console.log(ultimoFilm);
+
+        //parto da un film per risalire al genitore
+        let genitore = document.querySelector('#FullMJ').parentElement;
+        console.log(genitore);
+        genitore.classList.add("txtRed");
+
+        let shining = document.querySelector('#FullMJ').previousElementSibling.textContent;
+        console.log(shining);
+
+
+    </script>    
+</body>
+</html>

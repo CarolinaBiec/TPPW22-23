@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Lista Film </h1>
+
+    <ul id="listaFilm">
+        <li class="txtRed">Il buono il brutto e il cattivo</li>
+        <li class="txtRed">Batman</li>
+        <li class="txtRed">Qualcuno voloò sul nido del cuculo</li>
+        <li class="txtRed">Shining</li>
+        <li class="txtRed">Full Metal Jacket</li>
+        <li class="txtRed">Arancia Meccanica</li>
+    </ul>
+
+    <p id="user">Dario Mennillo</p>
+    
+    <script>
+    //utilizzare vari modi per recuperare tutti i miei li cambiando la classe in txtBlue
+    //1°
+    // let liS = document.querySelectorAll('li');
+    
+    //2°
+    // let liS = document.querySelectorAll('#listaFilm li');
+    
+    //3°
+    // let liS = document.querySelectorAll('li.txtRed');
+
+    //4°
+    // let liS = document.querySelector('#listaFilm').children;
+    
+    //5°
+    // let liS = document.querySelector('ul').children;
+
+    //6°
+    let liS = document.querySelectorAll('ul li');
+    console.log(liS);
+
+    //cambio la classe in txtBlue col ciclo for classico
+    // for(var i = 0; i < liS.length; i++){
+    //     liS[i].className = "txtBlue";
+    // }
+
+    //operatore ... serve a concatenare due array, se utilizzato da solo concatena con un array vuoto trasformando la nodelist o la collection in un array
+
+    [...liS].forEach(singoloLi => {
+        singoloLi.className = "txtBlue";
+        singoloLi.textContent = "PAUSA"
+    });
+
+    //ipoteticamente 
+    // var user = document.querySelectorAll('#user');
+    // console.log(user);
+
+    
+
+    </script>    
+</body>
+</html>
