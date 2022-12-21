@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1 id="titolo">Hello, World</h1>
+
+    <h2 class="txtRed sottolineato">Roma</h2>
+    
+    <img id="miaImg">
+
+
+    <script>
+        //set Attribute: setta qualsiasi tipo di attributo
+        var titolo = document.querySelector('#titolo');
+        titolo.setAttribute("class", "txtBlue");
+
+        let miaImg = document.querySelector('#miaImg');
+        miaImg.setAttribute('src', "https://source.unsplash.com/800x800/?Torino");
+        miaImg.setAttribute("alt", "Immagine di Roma");
+
+        //removeAttribute,
+        // in questo caso ruimuove tutte le classi associate
+        document.querySelector('h2').removeAttribute('class');
+
+        //hasAttribute: controlla se esiste o meno un determinato attributo 
+        if(titolo.hasAttribute("class")){
+            console.log("Il titolo ha una classe: " + titolo.className);
+        }
+
+    </script>
+</body>
+</html>

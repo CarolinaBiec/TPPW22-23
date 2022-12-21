@@ -9,3 +9,7 @@ li .item, #due{
 .txtBlue{
     color: blue;
 }
+
+.sottolineato {
+    text-decoration: underline;
+}

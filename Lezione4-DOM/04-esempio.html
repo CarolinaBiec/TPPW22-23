@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <ul id="listaFilm">
-        <li>Il buono il brutto e il cattivo<button>Segna Film</button></li>
+    <ul>
+        <li>Il buono il brutto e il cattivo</li>
         <li>Batman</li>
         <li>Qualcuno voloò sul nido del cuculo</li>
         <li>Shining</li>
@@ -16,6 +17,35 @@
         <li>Arancia Meccanica</li>
     </ul>
 
+    <button id="btn">Cambia Colore</button>
+
+    <script>
+        // Al click sul pulsante inserire la classe txtRed a tutti gli li pari e txtBlue a tutti gli li dispari
+
+        let btn = document.querySelector('#btn');
+
+        btn.onclick = function(){
+            let lis = document.querySelectorAll('li');
+            // for(var i = 0; i < lis.length; i++){
+            //     if(i%2 == 0){ // i resto della divisione per 2
+            //         lis[i].className = "txtRed";
+            //     }else{
+            //         lis[i].className = "txtBlue";
+            //     }
+            // }
+            let i = 0;
+            [...lis].forEach(singoloLi => {
+               i++;
+               if(i%2 == 0){
+                singoloLi.className = "txtRed";
+               } else{
+                singoloLi.className = "txtBlue";
+               }
+            });
+
+        }
+        
+    </script>
     
 </body>
 </html>

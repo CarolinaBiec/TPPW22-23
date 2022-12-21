@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="listaSpesa"></ul>
+
+    <script>
+        //inserire nuovi elementi nella lista
+        let ul = document.querySelector('#listaSpesa');
+
+        // ul.innerHTML = "<li> Frutta </li>";
+        // ul.innerHTML += "<li> Verdura </li>"
+
+        var li1 = document.createElement('li');
+        li1.textContent = "Frutta";
+        ul.appendChild(li1);//appendChild aggancia un figlio al parent ul
+
+
+        var li2 = document.createElement("li");
+        li2.textContent = "Verdura";
+        ul.appendChild(li2); //GENITORE -> FIGLIO
+
+
+        //inserisco un elemento tra Frutta e Verdura
+        var li3 = document.createElement("li");
+        li3.textContent = "Pane";
+        li1.after(li3); //FRATELLO -> FRATELLO
+
+        //inserisco un elemento tra Pane e Verdura
+        var li4 = document.createElement("li");
+        li4.textContent = "Vino"
+        li2.before(li4); //FRATELLO -> FRATELLO
+
+
+        //rimuovo un elemento, il terzo partendo dal genitore
+        let elDaRimuovere = ul.children[2];
+        ul.removeChild(elDaRimuovere);
+
+        //rimuovo l'elemento frutta
+        ul.removeChild(li1);
+
+    </script>
+
+</body>
+</html>
