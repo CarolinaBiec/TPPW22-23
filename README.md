@@ -3,3 +3,4 @@
 - [Funzioni](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione1-Funz)
 - [Statement: if, for...](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione2-Statement)
 - [Oggetti](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione3-Oggetti)
+- [Gestione DOM](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione4-DOM)
