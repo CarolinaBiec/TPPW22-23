@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Molle:400italic&subset=latin,latin-ext);
+
+body{
+  background-color: hsla(0,0%,0%,1);
+  margin: 0px;
+  overflow: hidden;
+  color: aliceblue;
+  font-size: larger;
+  font-family: 'Molle', cursive;
+  }
+
+  
+div{
+    left: 10%;
+    position: absolute;
+    top: 10%;
+  }

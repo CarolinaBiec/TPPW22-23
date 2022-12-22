@@ -5,22 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List di Babbo Natale</title>
+    <link rel="stylesheet" href="css/snow.css">
 </head>
 <body>
+    <canvas id='canv'>
+        
+    </canvas>
+        
+    <div id="mioDiv">
 
-    <input type="text" placeholder="inserisci il regalo">
+        <input type="text" placeholder="inserisci il regalo" id="inputTxt">
+        
+        <br>
+        <button id="btn">Inserisci</button>
+        
+        <div id="numRegali"></div>
+        
+        <ul id="listaRegali">
+ 
+        </ul>
 
-    <br>
-    <button id="btn">Inserisci</button>
 
-    <div id="numRegali"></div>
+    </div>
 
-    <ul id="listaRegali"></ul>
-
-
+    <audio autoplay src="./Audio/christmas.mp3"></audio>
+    
     <script>
         //Creare una lista di regali li. Controllare che il campo input NON sia vuoto altrimenti stampa un avviso. Aggiorna il numero dei regali di volta in volta. I regali devono essere colorati in rosso i pari e oro i dispari. Ogni regalo deve avere un pulsante che permetta di cancellarlo dalla lista.
-        //Al raggiungimento di 10 regali comincia a nevicare 
+        //Al raggiungimento di 10 regali comincia a nevicare
+        let btn = document.querySelector("#btn");
+        let listaRegali = document.querySelector('#listaRegali'); //ul
+        let mioDiv = document.querySelector('#mioDiv');
+
+        function aggiungi(){
+            let inputTxt = document.querySelector('#inputTxt').value;
+            let li = document.createElement('li');
+            li.textContent = inputTxt;
+            
+            //creare il pulsante per eliminare
+            let pulX = document.createElement("span");
+            pulX.textContent = "X";
+
+            pulX.onclick = function(){
+                listaRegali.removeChild(li);
+                // this.parentNode.remove();
+            }
+
+            li.appendChild(pulX);
+            listaRegali.appendChild(li);
+
+            // checkCampo();
+            // clear();
+
+            if(listaRegali.children.length >= 5){
+                nevica();
+            }
+            
+            document.querySelector('#inputTxt').value = ""
+        }
+        
+        btn.onclick = aggiungi;
+
+        
+        function nevica(){   
+            var script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+            script.setAttribute('src', './js/neve.js');
+            document.head.appendChild(script);
+        }
+        
     </script>
     
 </body>
