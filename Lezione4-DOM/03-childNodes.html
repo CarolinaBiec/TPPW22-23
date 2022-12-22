@@ -9,7 +9,10 @@
 </head>
 <body>
     <ul id="listaFilm">
-        <li class="txtRed">Il buono il brutto e il cattivo<button>Segna Film</button></li>
+        <li class="txtRed">
+            Il buono il brutto e il cattivo <!--primo figlio di li-->
+            <button>Segna Film</button> <!--secondo figlio di li-->
+        </li>
         <li class="txtRed">Batman</li>
         <li class="txtRed">Qualcuno voloò sul nido del cuculo</li>
         <li class="txtRed">Shining</li>
@@ -18,6 +21,14 @@
     </ul>
 
     <script>
+
+        // let contenutoPulsante = document.querySelector('#litstaFilm').firstElementChild.children[1].textContent
+        let contenutoPulsante = document.querySelector('#listaFilm').firstElementChild.firstElementChild.textContent;
+        let titoloPrimoFilm = document.querySelector('#listaFilm').firstElementChild.firstChild.textContent;
+        console.log(contenutoPulsante);
+        console.log(titoloPrimoFilm);
+
+
 
         let parentUl = document.querySelector('#listaFilm'); //ul
         console.log(parentUl);

@@ -11,17 +11,53 @@
     <h1>Lista Film</h1>
 
     <ul id="listaFilm">
-        <li>Il buono il brutto e il cattivo</li>
+        <li>Blade Runner</li>
+        <li>Il grande Lebowski</li>
+        <li>Avatar</li>
         <li>Batman</li>
-        <li>Qualcuno voloò sul nido del cuculo</li>
-        <li>Shining</li>
-        <li>Full Metal Jacket</li>
-        <li>Arancia Meccanica</li>
     </ul>
-
+    
     <script>
+        function costruisciLink(titoloFilm, li){
+            let a = document.createElement('a');
+            a.setAttribute("href", "https://it.wikipedia.org/wiki/" + titoloFilm );
+            a.setAttribute("target", "blank");
+            a.textContent = titoloFilm;
+            li.textContent = '';
+            li.appendChild(a);
+        }
+
         // senza toccare lo html inserire un link per ogni film alla pagina wikipedia relativa
+        //1.Recupero tutti i titoli
+        let liS = document.querySelectorAll('#listaFilm li');
         
+        // let titoli = [];
+
+        for(var i = 0; i < liS.length; i++){
+            // titoli.push(liS[i].textContent);
+            costruisciLink(liS[i].textContent, liS[i])
+        }
+        
+        //comporre il link 
+        // let a = document.createElement('a');
+        // a.setAttribute("href", "https://it.wikipedia.org/wiki/" + titoli[0]);
+        // a.textContent = titoli[0];
+        // liS[0].textContent = '';
+        // liS[0].appendChild(a);
+        
+        // for(var i = 0; i < liS.length; i++){
+        //     let a = document.createElement('a');
+        //     a.setAttribute("href", "https://it.wikipedia.org/wiki/" + titoli[i] );
+        //     a.setAttribute("target", "blank");
+        //     a.textContent = titoli[i];
+        //     liS[i].textContent = '';
+        //     liS[i].appendChild(a);
+
+                //OPPURE LE DUE RIGHE SOPRA FARLE CON REPLACEcHILDREN
+        //     // liS[i].replaceChildren(a);
+        // }
+
+
     </script>
 
 </body>

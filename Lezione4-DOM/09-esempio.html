@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <ul id="miaLista">
+        <li>Ciao</li>
+        <li>Come</li>
+        <li>Stai</li>
+    </ul>
+
+
+    <script>
+        let liS = document.querySelectorAll('li');
+        console.log(liS);
+
+        //voglio conoscere il contenuto del secondo li
+        let testo2Li = liS[1].textContent;
+        console.log(testo2Li);
+
+
+        let provaDylan = document.querySelectorAll('ul')[0].children;
+        console.log(provaDylan);
+
+        let figliDiUl = document.querySelector("#miaLista").children;
+        console.log(figliDiUl);
+
+        //per ogni (for each) elemento (element) nell'array fai(=>) qualcosa ({})
+        [...figliDiUl].forEach(element => {
+            console.log(element.textContent);
+        });
+
+        for(var i=0; i < figliDiUl.length; i++){
+            console.log(figliDiUl[i].textContent);
+        }
+
+
+        //... 3 dots
+
+        let animali = ["cane", "gatto", "topo"];
+        let animaliFattoria = ["maiale", "cavallo", "gallina", "asino"];
+
+        // let tuttiAnimali = animali.concat(animaliFattoria);
+        let tuttiAnimali = [...animali, ...animaliFattoria];
+
+        console.log(tuttiAnimali);
+
+
+    </script>
+</body>
+</html>
