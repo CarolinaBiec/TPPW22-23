@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <h1>Compila il form con le tue informazioni</h1>
+
+
+    <form action="" method="get" id="formReg" name="formReg">
+
+        <input type="text" placeholder="Username" name="username"><br>
+        <input type="password" placeholder="Password" name="password">
+        <input type="button" value="M/N" id="btnMN">
+        <br>
+        <input type="email" placeholder="@Email" name="email"><br>
+        <input type="text" placeholder="Codice Fiscale" name="codFis"><br>
+
+        <select name="genere" id="genere">
+            <option value="-1" selected disabled>Scegli Genere</option>
+            <option value="f">Femmina</option>
+            <option value="m">Maschio</option>
+            <option value="a">Altro</option>
+        </select>
+        
+        <br>
+        <input type="checkbox" name="privacy" id="checkPrivacy">
+        <label for="checkbox">Privacy & trattamento dati</label>
+        <br>
+        <input type="submit" value="Invia">
+    </form>
+
+    <hr>
+    <h6>Suggerimenti del form</h6>
+    <div id="feed"></div>
+
+    <hr>
+    <h6>Informazioni Utente</h6>
+    <div id="demo"></div>
+
+    <script>
+        //non recupero i campi byId  ma byName
+        let formReg = document.formReg;
+        let username = document.formReg.username;
+        let password = document.formReg.password;
+        let email = document.formReg.email;        
+        let codFis = document.formReg.codFis;        
+        let genere = document.formReg.genere;        
+        let privacy = document.formReg.privacy;   
+        
+        let feed = document.querySelector('#feed');
+        let demo = document.querySelector('#demo');
+
+        function hintUsername(){
+            console.log("Ciao sei all'interno del campo Username");
+            feed.innerHTML = "Il tuo username deve essere di almeno 5 caratteri";
+        }
+
+        function checkUsername(){
+            console.log("Sei uscito dal campo");
+            if(username.value.length < 5){
+                feed.innerHTML = "Allora non hai capito, deve essere di 5 !!!!";
+            }else{
+                feed.innerHTML = "";
+            }
+        }
+
+        username.addEventListener('focus', hintUsername);
+        username.addEventListener('blur', checkUsername);
+
+
+        //Controllo la password mentre digito
+        function checkPass(){
+            if(password.value.length < 8){
+                password.classList.remove("bordoGreen");
+                password.classList.add("bordoRed");
+            }else{
+                password.classList.remove("bordoRed");
+                password.classList.add("bordoGreen");
+            }
+
+        }
+
+        password.addEventListener('input', checkPass);
+
+        //pulsante mostra nascondi
+        let btnMN = document.querySelector('#btnMN');
+
+        function mostraPSW(){
+            console.log("ciao");
+            if(password.getAttribute("type") == "password"){
+                password.setAttribute("type", "text");
+                console.log("ci sono ");
+            }else{
+                password.setAttribute("type", "password");
+            }
+        }
+
+        btnMN.addEventListener('click', mostraPSW);
+
+
+
+        //Controllo la select
+        function stampaGenere(){
+            demo.innerHTML = "Hai selezionate genere: " + genere.value;
+            demo.setAttribute("class", "colore" + genere.value );
+        }
+
+        genere.addEventListener("change", stampaGenere);
+
+        
+        //controllo Privacy al submit
+
+        function checkPrivacy(){
+            if(!privacy.checked){
+                event.preventDefault();
+                feed.innerHTML = "Devi prima accettare termini e condizioni"
+            }else{
+                demo.innerHTML = "Privacy Accettata";
+            }
+        }
+
+        formReg.addEventListener('submit', checkPrivacy);
+
+    </script>
+</body>
+</html>

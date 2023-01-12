@@ -1,0 +1,31 @@
+.txtBlue{
+    color: blue;
+}
+
+.dimensioni{
+    width: 200px;
+    height: 200px;
+}
+
+.bgRed{
+    background-color: red;
+}
+
+.bordoRed{
+    border: 5px solid red;
+}
+
+.bordoGreen{
+    border: 5px solid green;
+}
+
+.coloref{
+    color: violet;
+}
+.colorem{
+    color: springgreen;
+}
+.colorea{
+    color: purple;
+}
+

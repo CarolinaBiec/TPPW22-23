@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Event Listener</h1>
+
+    <input type="button" id="btn" value="Cliccami">
+
+    <div id="demo">
+        Bentornati dalla vacanze
+    </div>
+
+    
+
+    <script>
+        let btn = document.querySelector('#btn');
+
+        function cambiaColore(){
+          
+            //...cambia colore
+            console.log("cambia il colore");
+            //intercetto l'evento scatenante
+            console.log(event);
+
+            document.querySelector('#demo').classList.add("txtBlue");
+        }
+        
+        // btn.onclick = cambiaColore;
+
+        //EVENT LISTENER
+        //1° evento senza on
+        //2° nome della funzione senza()
+        //3° boolean, solitamente false
+
+        btn.addEventListener('click', cambiaColore, false);
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Compila il form sottostante</h1>
+
+    <form action="" method="GET" id="mioForm">
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="text" id="password" placeholder="Password"><br>
+        <input type="submit" value="Invia">
+    </form>
+
+    <div id="demo"></div>
+
+    <br>
+    <div id="divACaso" class="dimensioni">
+
+    </div>
+    
+    <script>
+
+        let demo = document.querySelector('#demo');
+        let mioForm = document.querySelector('#mioForm');
+
+        function checkUser(minLength){
+            let username = document.querySelector('#username').value;
+
+            if(username.length < minLength){
+                event.preventDefault();
+                demo.innerHTML += "Il tuo username è troppo corto <br>";
+            }
+        }
+
+        function checkPass(minLength){
+            let password = document.querySelector('#password').value;
+            if(password.length < minLength){
+                event.preventDefault();
+                demo.innerHTML += "La tua password è troppo corta <br>";
+            }
+        }
+
+        mioForm.addEventListener('submit', function(){
+            demo.innerHTML = '';
+            checkUser(6);
+            checkPass(8);
+            console.log(event.timeStamp);
+            let data = new Date(event.timeStamp);
+            console.log(data);
+        });
+
+        document.addEventListener('click', function(){
+            // console.log(event.pageX);
+            // console.log(event.pageY);
+        })
+
+        let divACaso=document.querySelector('#divACaso');
+        divACaso.addEventListener('click', function(){
+            console.log(event.pageX);
+            console.log(event.pageY);
+            console.log("Preso");
+
+            setTimeout(function(){
+                divACaso.classList.add("bgRed");
+            }, 1000)
+        })
+
+
+        //STROBO da disco
+        divACaso.addEventListener("mousemove", function(){
+            console.log("cambia colore")
+            bgColor = "rgb(10,"+(Math.ceil(Math.random() * 255)) + ","+ (Math.ceil(Math.random() * 255)) + ")";
+            divACaso.setAttribute("style", "background-color: " + bgColor +";");
+        });
+
+    </script>
+</body>
+</html>
