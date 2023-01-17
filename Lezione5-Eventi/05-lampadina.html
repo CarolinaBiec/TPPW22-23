@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Lampadina</h1>
+
+    <div id="lampadina" class="dimensioniDiv spenta">
+    </div>
+
+
+    <hr>
+
+    <input type="text" id="username" placeholder="inserisci il tuo nome"> 
+    <input type="button" id="btn" value="Add">
+    <div id="demo"></div>
+
+    <script>
+        let lampadina = document.querySelector('#lampadina');
+        
+        function accendi(){
+            lampadina.classList.replace("spenta", "accesa");
+        }
+
+        function spegni(){
+            lampadina.classList.replace("accesa", "spenta");
+        }
+
+        lampadina.addEventListener('mouseenter', accendi);
+        lampadina.addEventListener('mouseleave', spegni);
+
+        /////////////////////////////////////////////////////
+
+        let username = document.querySelector('#username');
+
+        username.addEventListener('keyup', enterPressed);
+
+        function enterPressed(){
+            // if(event.keyCode == 13){
+            //     document.querySelector('#demo').innerHTML = username.value;
+            // }
+            if(event.key == "Enter"){
+                // document.querySelector('#demo').innerHTML = username.value;
+                btn.click();
+            }
+        }
+
+        let btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', stampaNome);
+
+        function stampaNome(){
+            document.querySelector('#demo').innerHTML = username.value;
+        }
+
+
+        //attraverso Arrow
+        const primaFunzione = () => console.log("Prima funzione chiamata");
+        const secondaFunzione = () => console.log("Seconda funzione chiamata");
+
+        window.addEventListener("resize", ()=>{
+            primaFunzione();
+            secondaFunzione();
+        });
+
+
+
+    </script>
+</body>
+</html>

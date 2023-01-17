@@ -29,3 +29,17 @@
     color: purple;
 }
 
+
+.dimensioniDiv{
+    width: 300px;
+    height: 300px;
+}
+
+.spenta{
+    background-color: black;
+}
+
+.accesa{
+    background-color: yellow;
+}
+
