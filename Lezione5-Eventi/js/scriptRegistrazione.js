@@ -79,7 +79,9 @@ function registraUtente(username, email, password){
 
 
 function controllaUSER(){
-    if(localStorage.getItem("user") != ""){
+    let utente = localStorage.getItem("user");
+    
+    if(utente != null){
         let username = JSON.parse(localStorage.getItem("user")).username;
        demo.innerHTML = "Caro " + username + " sei già loggato";
     }
