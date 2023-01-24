@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <h1>Login</h1>
 
-    <input type="text" placeholder="Username" id="username"><br>
-    <input type="password" placeholder="Password" id="password"><br>
-    <label for="conn">Resta connesso</label> <input type="checkbox" id="restaConn"> <br>
-    <input type="button" id="btn" value="Login">
-    <input type="button" id="btnLogout" value="Logout">
-    
+    <div id="formLogin" class="">
+        <input type="text" placeholder="Username" id="username"><br>
+        <input type="password" placeholder="Password" id="password"><br>
+        <label for="conn">Resta connesso</label> <input type="checkbox" id="restaConn"> <br>
+        <input type="button" id="btn" value="Login">
+    </div>
+        <input type="button" id="btnLogout" value="Logout">
+        
     <div id="demo"></div>
 
     <script>
@@ -23,6 +26,7 @@
     let demo = document.querySelector('#demo');
     let btn = document.querySelector('#btn');
     let btnLogout = document.querySelector('#btnLogout');
+    let formLogin = document.querySelector('#formLogin');
 
     function User(username, password){
         this.username = username;
@@ -55,19 +59,40 @@
         verificaConnessioneUtente();
     }
 
+    function scriviNome(nome){
+        demo.innerHTML = "Ciao " + nome + " sei connesso";
+    }
+
     function verificaConnessioneUtente(){
-        let userConnesso = localStorage.getItem('userLoggato');
-        console.log(userConnesso);
-        if(userConnesso != null){
-            let username = (JSON.parse(userConnesso)).username;
-            demo.innerHTML = "Ciao " + username + " sei connesso";
+        let userConnessoLocal = localStorage.getItem('userLoggato');
+        let userConnessoSession = sessionStorage.getItem('userLoggato');
+
+        console.log();
+
+        if(userConnessoLocal != null || userConnessoSession != null){
+          
+            if((JSON.parse(userConnessoLocal)) != null){
+                let usernameLocal = (JSON.parse(userConnessoLocal)).username
+                scriviNome( usernameLocal );
+            }else{
+                scriviNome((JSON.parse(userConnessoSession)).username);
+            }
+
+            formLogin.setAttribute('class', 'nascondi');
         }else{
             demo.innerHTML = "Ciao, effettua prima le operazioni di Login";
+            formLogin.removeAttribute('class');
         }
 
     }
 
     verificaConnessioneUtente();
+
+    function pulisciSessionStorage(){
+        sessionStorage.removeItem("userLoggato");
+    }
+
+    pulisciSessionStorage();
 
     btn.addEventListener('click', login);
     btnLogout.addEventListener('click', logout);
