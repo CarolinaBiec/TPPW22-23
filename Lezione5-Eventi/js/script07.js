@@ -65,8 +65,3 @@ console.log(studentePreferito);
 
 let studentePreferitoOBJ = JSON.parse(studentePreferito);
 console.log(studentePreferitoOBJ);
-
-
-
-
-

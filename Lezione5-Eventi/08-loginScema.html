@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Login</h1>
+
+    <input type="text" placeholder="Username" id="username"><br>
+    <input type="password" placeholder="Password" id="password"><br>
+    <label for="conn">Resta connesso</label> <input type="checkbox" id="restaConn"> <br>
+    <input type="button" id="btn" value="Login">
+    <input type="button" id="btnLogout" value="Logout">
+    
+    <div id="demo"></div>
+
+    <script>
+
+    let demo = document.querySelector('#demo');
+    let btn = document.querySelector('#btn');
+    let btnLogout = document.querySelector('#btnLogout');
+
+    function User(username, password){
+        this.username = username;
+        this.password = password;
+    }
+
+    function login(){
+        let username = document.querySelector('#username').value;
+        let password = document.querySelector('#password').value;
+        let user = new User(username, password);
+        let userJSON = JSON.stringify(user);
+        restaConnesso(userJSON);
+        verificaConnessioneUtente();
+    }
+
+    function restaConnesso(user){
+        let checkbox = document.querySelector('#restaConn')
+        if(checkbox.checked){
+            localStorage.setItem('userLoggato', user);
+        }else{
+            sessionStorage.setItem('userLoggato', user);
+        }
+    }
+
+    //la funzione di logout pulisce la local Storage
+    function logout(){
+        if(localStorage.getItem('userLoggato') != ""){
+            localStorage.removeItem('userLoggato');
+        }
+        verificaConnessioneUtente();
+    }
+
+    function verificaConnessioneUtente(){
+        let userConnesso = localStorage.getItem('userLoggato');
+        console.log(userConnesso);
+        if(userConnesso != null){
+            let username = (JSON.parse(userConnesso)).username;
+            demo.innerHTML = "Ciao " + username + " sei connesso";
+        }else{
+            demo.innerHTML = "Ciao, effettua prima le operazioni di Login";
+        }
+
+    }
+
+    verificaConnessioneUtente();
+
+    btn.addEventListener('click', login);
+    btnLogout.addEventListener('click', logout);
+
+
+    //Far sparire i pulsanti di Login quando connesso e logout quando non sei connesso
+
+
+
+    </script>
+</body>
+</html>
