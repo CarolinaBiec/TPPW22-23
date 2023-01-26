@@ -18,8 +18,16 @@
     <!-- place navbar here -->
   </header>
   <main>
-    <div class="container" id="lista">
-        
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6" id="lista">
+            </div>
+            
+            <div class="col-md-6" id="vistaProdottoSingolo">
+                
+            </div>
+        </div>
     </div>
 
   </main>
@@ -38,6 +46,7 @@
   <script>
 
     const lista = document.querySelector('#lista');
+    const vistaProdottoSingolo = document.querySelector('#vistaProdottoSingolo')
     let url = "https://dummyjson.com/products";
     
     fetch(url)
@@ -51,8 +60,35 @@
 
      function stampaProdotti(arrayDiProdotti){
         arrayDiProdotti.forEach(prodottoSingolo => {
-            lista.innerHTML += `<li> ${prodottoSingolo.title} <button class="btn btn-primary">Show More</button> </li>`
+            lista.innerHTML += `<li> ${prodottoSingolo.title} <button class="btn btn-primary" data-id ="${prodottoSingolo.id}">Show More</button> </li>`
         });
+
+        let pulsanti = document.querySelectorAll('.btn');
+
+        [...pulsanti].forEach(pulsante => {
+            pulsante.addEventListener('click', function(){
+                let id = pulsante.getAttribute('data-id');
+                mostraInfo(id);
+            });
+        })
+     }
+
+     function mostraInfo(id){
+        console.log("ciao", id);
+        fetch("https://dummyjson.com/products/"+id)
+        .then(data => {return data.json()})
+        .then(response => {
+            console.log(response);
+            vistaProdottoSingolo.innerHTML = 
+              `<div class="card" style="width: 18rem;">
+                  <img src="${response.images[0]}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                  <h5 class="card-title">${response.brand}</h5>
+                  <p class="card-text">${response.description}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+              </div>`;
+        })
      }
 
 
