@@ -1,0 +1,73 @@
+{
+  "utenti": [
+    {
+      "id": 1,
+      "nome": "Dario",
+      "cognome": "Mennillo",
+      "role": "Admin"
+    },
+    {
+      "nome": "Gennarino",
+      "cognome": "Pautasso",
+      "id": 3
+    },
+    {
+      "nome": "Pluto",
+      "cognome": "De Paperoni",
+      "id": 4
+    },
+    {
+      "nome": "21342314",
+      "cognome": "234142134231",
+      "id": 5
+    }
+  ],
+  "docenti": [
+    {
+      "id": 1,
+      "nome": "Dario",
+      "cognome": "Mennillo",
+      "materia": "Javascript"
+    },
+    {
+      "id": 2,
+      "nome": "Davide",
+      "cognome": "Ghione",
+      "materia": "HTML"
+    }
+  ],
+  "corsi": [
+    {
+      "id": 1,
+      "denom": "Javascript",
+      "ore": 280
+    },
+    {
+      "id": 2,
+      "denom": "Angular",
+      "ore": 80
+    },
+    {
+      "id": 3,
+      "denom": "HTML",
+      "ore": 60
+    }
+  ],
+  "autore": {
+    "nome": "Dario"
+  },
+
+  "utentiCarrello": [
+    {
+        "id": 1,
+        "username": "pippo84",
+        "carrelloAcquistato": [
+            {
+                "id":8,
+                "description": "IphoneX",
+                "price": "760"
+            }
+        ]
+    }
+  ]
+}

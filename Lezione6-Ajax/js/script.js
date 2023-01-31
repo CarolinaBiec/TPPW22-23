@@ -44,10 +44,18 @@ function stampaSingolo(id) {
                         <div class="card-body">
                             <h5 class="card-title">${response.title}</h5>
                             <p class="card-text">${response.description}</p>
-                            <button href="#" class="btn btn-primary">Metti nel carrello</button>
+                            <button href="#" id="btnCarrello" class="btn btn-primary">Metti nel carrello</button>
                         </div>
                 </div>`
-        });
+            
+                let btnCarrello = document.querySelector('#btnCarrello');
+
+                btnCarrello.addEventListener("click", function(){
+                    let prodottoSingolo = JSON.stringify(response);
+                    localStorage.setItem("prod"+response.id, prodottoSingolo);
+                });
+
+            });
 
 
 }

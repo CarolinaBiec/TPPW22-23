@@ -18,35 +18,38 @@
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="03-dummyAPIResolved.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="03-dummyAPICarrello.html">Carrello</a>
-            </li>
-          </ul>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="03-dummyAPIResolved.html">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="03-dummyAPIResolved.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="03-dummyAPICarrello.html">Carrello</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
   </header>
   <main>
+    <h1>Carrello</h1>
 
-
-
-    <div class="container">
+    <div class="continer">
         <div class="row">
-
-            <div class="col-md-6" id="lista">
+            <div class="col-md-4">
+                <h3 id="titoloCarr">Stai acquistando i seguenti prodotti</h3>
+                <ul id="listaCarrello"></ul>
             </div>
-            
-            <div class="col-md-6" id="vistaProdottoSingolo">      
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-danger" id="btnSvuota">Svuota Carrello</button>
             </div>
         </div>
     </div>
@@ -64,7 +67,7 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <script src="./js/script.js"></script>
+  <script src="./js/scriptCarrello.js"></script>
 </body>
 
 </html>
