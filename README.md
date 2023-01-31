@@ -6,3 +6,4 @@
 - [Gestione DOM](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione4-DOM)
 - [Eventi](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione5-Eventi)
 - [Ajax](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione6-Ajax)
+- [Json-server](https://github.com/DarioIEL/TPPW22-23/tree/main/Lezione7-JSON-Server)
