@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+  
+    
+</head>
+<body>
+    
+    <h1>Dati esterni di ReqRes</h1>
+    <div id="lista"></div>
+
+     <!-- Bootstrap JavaScript Libraries -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+   </script>
+ 
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+   </script>
+    <script>
+        const lista = document.querySelector("#lista");
+        // //XHR
+        // let xhr = new XMLHttpRequest();
+        // const endpointURL = "https://reqres.in/api/users";
+
+        // xhr.open("GET", endpointURL);
+        // xhr.send();
+        // xhr.onreadystatechange = function(){
+        //     if(this.readyState == 4 && this.status == 200){
+        //         console.log(this.readyState, this.status);
+        //         console.log(xhr.responseText);
+
+        //         //costruisco l'oggetto
+        //         let mioObj = JSON.parse(this.responseText);
+        //         console.log(mioObj);
+
+        //         let contatti = [];
+
+        //         for(var i = 0; i < mioObj.data.length; i++){
+        //             contatti.push(mioObj.data[i]);
+        //             // lista.innerHTML += "<li>" + mioObj.data[i].first_name + "<img src ='"+ mioObj.data[i].avatar+"'>" + "</li>";
+
+        //             //` <---backtick ALT + 96(tastierino numerico)
+        //             // lista.innerHTML += `<li> ${mioObj.data[i].first_name} 
+        //             //     <img src="${mioObj.data[i].avatar}"> </li>`;
+
+        //             lista.innerHTML += 
+        //                 `<div class="card" style="width: 18rem;">
+        //                     <img src="${mioObj.data[i].avatar}" class="card-img-top" alt="...">
+        //                     <div class="card-body">
+        //                     <h5 class="card-title">${mioObj.data[i].first_name}</h5>
+        //                     <p class="card-text">${mioObj.data[i].email}</p>
+        //                     <a href="#" class="btn btn-primary">Go somewhere</a>
+        //                     </div>
+        //                 </div>`;
+        //         }
+        //         console.log(contatti);
+        //     }
+
+        // }
+        
+
+        //CON METODO FETCH
+        const endpointURL = "https://reqres.in/api/users";
+
+        let persone = [];
+        
+        fetch(endpointURL)
+        .then(data => {return data.json()}) //trasformo dati grezzi (json) in oggettiJS
+        .then(response => { //la response è già l'oggettoJS
+            //response è l'oggettone
+            console.log(response);
+
+            response.data.forEach(persona => {
+                persone.push(persona)
+            });
+            
+            //a mostraDati passiamo un array di oggetti: response.data
+            mostraDati(response.data);
+        });
+
+        function mostraDati(datiUsers){
+            datiUsers.forEach(persona => {
+                lista.innerHTML += `<li> ${persona.first_name} </li>`; 
+            });
+        }
+        console.log(persone);
+
+
+    </script>
+</body>
+</html>
