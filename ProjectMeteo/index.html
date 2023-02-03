@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo</title>
+
+    <!-- CSS Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Meteo</h1>
+
+    <p><strong>Benvenuto sul sito del meteo, digita il nome di una città per conoscere il meteo in tempo reale, oppure
+            clicca sul pulsante cerca per sapere il meteo nella città in cui sei attualmente geolocalizzato</strong></p>
+
+    <input type="text" id="city" placeholder="città">
+    <input type="button" value="Cerca" id="btnSearch">
+
+    <!-- Integrare la mappa, nel momento in cui carico la pagina verrò geolocalizzato.
+    Provare: nel campo input viene inserito il nome della città preso dalla geolocalizzazione come suggerimento -->
+
+    <div class="dimMappa" id="mappa"></div>
+
+    <!-- Script Modernizr -->
+    <script src="./js/modernizrGeoLoc.js"></script>
+
+    <!-- Script Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+    <!-- MioScript -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
