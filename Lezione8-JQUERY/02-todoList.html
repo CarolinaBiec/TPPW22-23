@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>To Do JQUERY</h1>
+    <input type="text" id="todo" placeholder="inserisci qualcosa da fare">
+    <button id="btn"> Inserisci </button>
+
+    <p id="demo"></p>
+    <ul id="lista"></ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#btn").on("click", function(){
+                var todo = $("#todo").val();
+                $("#lista").append("<li> " + todo + "<button class='btnDanger'>X</button> </li>");
+                $("#todo").val("");
+            });
+
+            $("#todo").on("keyup", function(event){
+                if(event.keyCode == 13){
+                    $("#btn").click();
+                }
+            });
+
+            $(document).on("click", ".btnDanger", elimina);
+
+            function elimina(){
+                console.log("sto eliminando");
+                $(this).parent().remove();
+            }
+
+            $(document).on("click", "li", function(){
+                // if($(this).hasClass("barrato")){
+                //     $(this).removeClass("barrato");
+                // }else{
+                //     $(this).addClass("barrato");
+                // }
+
+                //oppure
+                $(this).toggleClass("barrato")
+            } )
+        })
+    </script>
+</body>
+</html>
