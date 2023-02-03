@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "id":1,
+            "nome":"Dario",
+            "role": "Admin"
+        },
+
+        {
+           "id":2,
+            "nome":"Davide",
+            "role": "UserBasic"
+        },
+        {
+            "id":3,
+             "nome":"Elena",
+             "role": "Admin"
+         },
+         {
+            "id":4,
+             "nome":"Pippo",
+             "role": "Guest"
+         }
+    ]
+}

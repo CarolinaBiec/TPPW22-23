@@ -9,12 +9,14 @@
     {
       "nome": "Gennarino",
       "cognome": "Pautasso",
-      "id": 3
+      "id": 3,
+      "role":"UserBasic"
     },
     {
       "nome": "Pluto",
       "cognome": "De Paperoni",
-      "id": 4
+      "id": 4,
+      "role":"Guest"
     },
     {
       "nome": "21342314",

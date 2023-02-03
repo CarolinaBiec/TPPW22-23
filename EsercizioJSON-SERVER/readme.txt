@@ -1,0 +1,6 @@
+- Crea un DB Json-server
+- Inserisci degli users con varie proprietà tra cui "role":
+        -Admin
+        -UsersBasic
+        -Guest
+- Recupera gli utenti byRole, cioè costruisci un filtro utilizzando
