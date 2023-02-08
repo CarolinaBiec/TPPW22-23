@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="demo"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+
+
+        $.ajax({
+            url: "https://dummyjson.com/products/",
+            type: "get",
+            dataType: "json",
+            success: function(data){
+                console.log(data.products);
+                var prodotti = [];
+                $.each(data.products, function(key, value){
+                    prodotti.push(key + " - " + value.title);
+                    $("#demo").append("<li> Id: " + key + " - " + value.title + "</li>")
+                })
+
+                console.log(prodotti);
+            },
+            error: function(){
+                console.log("ops, qualcosa è andato storto");
+            }
+        });
+
+        //shortcut
+        $.get("https://dummyjson.com/products/", function(data){
+            console.log(data);
+        })
+    
+    function inserisciProdotto(){
+
+        $.ajax({
+            url: "http://localhost:3000/autore",
+            type: "post",
+            dataType: "json",
+            data:{
+                title: "Mouse bluetooth",
+                price: 25
+            },
+            success: function(response){
+                console.log(response);
+            },
+            error: function(){
+                console.log("Inserimento non avvenuto");
+            }
+
+        });
+    }
+
+
+
+
+    </script>
+</body>
+</html>
