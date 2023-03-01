@@ -1,0 +1,47 @@
+{
+  "repliche": [
+    {
+      "id": 1,
+      "titolo": "Turandot",
+      "autore": "Puccini",
+      "durata": 190,
+      "copertina": "https://upload.wikimedia.org/wikipedia/commons/4/41/Poster_Turandot.jpg",
+      "prezzo": 70
+    },
+    {
+      "id": 2,
+      "titolo": "La Traviata",
+      "autore": "Verdi",
+      "durata": 190,
+      "copertina": "./img/La-Traviata-Poster.jpg",
+      "prezzo": 70
+    },
+    {
+      "id": 3,
+      "titolo": "La cavalleria rusticana",
+      "autore": "Mascagni",
+      "durata": 190,
+      "copertina": "./img/cavalleriaRusticana.jpg",
+      "prezzo": 70
+    },
+    {
+      "id": 4,
+      "titolo": "Madama Butterfly",
+      "autore": "Puccini",
+      "durata": 190,
+      "copertina": "./img/Madama_Butterfly.jpg",
+      "prezzo": 70
+    },
+    {
+      "id": 5,
+      "titolo": "Boheme",
+      "autore": "Puccini",
+      "durata": 190,
+      "copertina": "https://cultura.biografieonline.it/wp-content/uploads/2017/07/La-Boheme-Puccini.jpg",
+      "prezzo": 70
+    }
+  ],
+  "carrello": [
+   
+  ]
+}
