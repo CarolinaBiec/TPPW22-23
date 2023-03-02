@@ -17,40 +17,81 @@
   <header>
     <!-- place navbar here -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-              <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownId">
-                          <a class="dropdown-item" href="#">Action 1</a>
-                          <a class="dropdown-item" href="#">Action 2</a>
-                      </div>
-                  </li>
-              </ul>
-              <form class="d-flex my-2 my-lg-0">
-                  <input class="form-control me-sm-2" type="text" placeholder="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-          </div>
-       </div>
-     </nav>
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="./index.html" aria-current="page">Home <span
+                  class="visually-hidden">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./carrello.html">Carrello</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+              </div>
+            </li>
+          </ul>
+          <form class="d-flex my-2 my-lg-0">
+            <input class="form-control me-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
   </header>
   <main>
 
-    <div id="carrello"></div>
+    <div class="container">
 
+      <div class="row">
+
+        <div class="col-md-6">
+          <div id="carrello"></div>
+          <div>
+            <h4 id="totaleCarrello"></h4>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="" class="form-label">Nome Completo</label>
+            <input type="text"
+              class="form-control" id="nome">
+            <small id="helpId" class="form-text text-muted"></small>
+          </div>
+
+          <div class="mb-3">
+            <label for="" class="form-label">Indirizzo</label>
+            <input type="text"
+              class="form-control" id="indirizzo">
+            <small id="helpId" class="form-text text-muted"></small>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Carta di Credito</label>
+            <input type="text"
+            class="form-control" id="creditCard">
+            <small id="helpId" class="form-text text-muted"></small>
+          </div>
+            
+            <div class="my-3">
+              <button type="button" id="btnPaga" class="btn btn-primary">Paga</button>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
 
 
   </main>
@@ -65,7 +106,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
-<script src="./js/carrello.js"></script>
+  <script src="./js/carrello.js"></script>
 
 </body>
 

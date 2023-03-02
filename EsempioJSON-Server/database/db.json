@@ -42,6 +42,20 @@
     }
   ],
   "carrello": [
-   
+    {
+      "id": 2,
+      "titolo": "La Traviata",
+      "prezzo": 70
+    },
+    {
+      "id": 3,
+      "titolo": "La cavalleria rusticana",
+      "prezzo": 70
+    },
+    {
+      "id": 1,
+      "titolo": "Turandot",
+      "prezzo": 70
+    }
   ]
 }
