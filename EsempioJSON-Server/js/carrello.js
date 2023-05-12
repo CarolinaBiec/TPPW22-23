@@ -18,6 +18,7 @@ fetch("http://localhost:3000/carrello")
 
         let btn = document.createElement("button");
         btn.textContent= "Elimina";
+        btn.setAttribute("class", "btn btn-primary")
         btn.addEventListener("click", function(){
             eliminaSingolo(prodotto.id);
         });
