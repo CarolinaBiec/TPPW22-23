@@ -41,5 +41,21 @@
       "prezzo": 70
     }
   ],
-  "carrello": []
+  "carrello": [
+    {
+      "id": 1,
+      "titolo": "Turandot",
+      "prezzo": 70
+    },
+    {
+      "id": 2,
+      "titolo": "La Traviata",
+      "prezzo": 70
+    },
+    {
+      "id": 4,
+      "titolo": "Madama Butterfly",
+      "prezzo": 70
+    }
+  ]
 }

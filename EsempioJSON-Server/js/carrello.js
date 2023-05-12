@@ -12,7 +12,19 @@ fetch("http://localhost:3000/carrello")
     response.forEach(prodotto => {
         totale += prodotto.prezzo;
         idRepliche.push(prodotto.id);
-        carrello.innerHTML += "<li>" + prodotto.titolo + " - Prezzo: " + prodotto.prezzo + "</li>";
+      
+        let li = document.createElement("li");
+        li.textContent = `${prodotto.titolo} - Prezzo: ${prodotto.prezzo}`;
+
+        let btn = document.createElement("button");
+        btn.textContent= "Elimina";
+        btn.addEventListener("click", function(){
+            eliminaSingolo(prodotto.id);
+        });
+
+        li.appendChild(btn);
+
+        carrello.appendChild(li);
     });
 
     if(totale != 0){
@@ -23,6 +35,14 @@ fetch("http://localhost:3000/carrello")
    
 });
 
+
+function eliminaSingolo(id){
+    fetch("http://localhost:3000/carrello/"+id,{
+        method: "DELETE"
+    })
+    .then(res => {return res.json()})
+    .then(res => console.log(res))
+}
 
 //pulsante PAGA
 var btnPaga = document.querySelector("#btnPaga");
